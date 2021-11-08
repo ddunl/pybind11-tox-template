@@ -1,7 +1,7 @@
 from glob import glob
 from setuptools import setup, find_packages
 from pybind11.setup_helpers import Pybind11Extension
-import os
+
 
 ext_modules = [
     Pybind11Extension(
@@ -20,6 +20,7 @@ setup(
     description='',
     long_description='',
     packages=find_packages('src'),
-    package_dir={'' : 'src'},
-    ext_modules=ext_modules
+    package_dir={'': 'src'},
+    ext_modules=ext_modules,
+    install_requires=["pybind11"]
 )
