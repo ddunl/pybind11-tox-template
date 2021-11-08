@@ -1,5 +1,5 @@
-from python_example import sub_wrapper
+from pybind11_tox_example import sub
 
 
 def test_sub():
-    assert sub_wrapper(2, 2) == 0
+    assert sub(2, 2) == 0

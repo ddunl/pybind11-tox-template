@@ -1,5 +1,5 @@
-from python_example import add_wrapper
+from pybind11_tox_example import add
 
 
 def test_add():
-    assert add_wrapper(2, 2) == 4
+    assert add(2, 2) == 4
