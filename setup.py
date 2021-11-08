@@ -1,11 +1,16 @@
 from glob import glob
 from setuptools import setup, find_packages
 from pybind11.setup_helpers import Pybind11Extension
+import os
 
+print("__file__")
+root = os.path.dirname(__file__)
+print(root)
 ext_modules = [
     Pybind11Extension(
-        "python_example.cpplib",
-        ["src/python_example/module.cpp"],  # Sort source files for reproducibility
+        'python_example.cpplib',
+        sorted(glob("src/**/*.cpp")),
+        include_dirs=['src/python_example']
     ),
 ]
 
