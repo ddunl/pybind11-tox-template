@@ -7,7 +7,8 @@ ext_modules = [
     Pybind11Extension(
         'pybind11_tox_example.cpplib',
         sorted(glob("src/**/*.cpp")),
-        include_dirs=['src/python_example']
+        include_dirs=['src/python_example'],
+        extra_compile_args=['-std=c++11']
     ),
 ]
 
